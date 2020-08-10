@@ -1,5 +1,4 @@
 FROM ubuntu:bionic as builder
-B
 LABEL maintainer="Xueping Yang <xueping.yang@gmail.com>"
 
 RUN set -eux; \
@@ -39,7 +38,7 @@ RUN set -eux; \
     rustc --version; \
     openssl version;
 
-RUN git clone https://github.com/quake/ckb-indexer.git /ckb-indexer
+RUN git clone https://github.com/nervosnetwork/ckb-indexer.git /ckb-indexer
 RUN cd /ckb-indexer; \
     git checkout v0.1.6; \
     cargo build --release
